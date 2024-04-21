@@ -15,3 +15,7 @@ def test_print_command_as_func():
     # test we don't crash
     print_command()
     print_command_2()
+
+
+def test_command_with_args():
+    call_command("print_command_with_args", "name")
