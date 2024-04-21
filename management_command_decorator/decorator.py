@@ -1,4 +1,6 @@
 import functools
+import inspect
+from argparse import ArgumentParser
 
 from django.core.management import BaseCommand
 
@@ -13,10 +15,16 @@ class DecoratedCommand(BaseCommand):
         super().__init__(*args, **kwargs)
 
     def handle(self, *args, **options):
-        return self.func()
+        parameters = inspect.signature(self.func).parameters
+        kwargs = {key: options[key] for key in parameters}
+        return self.func(*args, **kwargs)
 
     def rpartition(self, *args, **kwargs):
         return [self.func.__module__.rpartition(".")[0]]
+
+    def add_arguments(self, parser: ArgumentParser):
+        for parameter in inspect.signature(self.func).parameters:
+            parser.add_argument(parameter)
 
 
 def django_management_command(wrapped=None, *, name=None):
