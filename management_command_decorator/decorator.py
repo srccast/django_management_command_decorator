@@ -28,4 +28,4 @@ def django_management_command(wrapped=None, *, name=None):
         return wrapped(*args, **kwargs)
 
     command_dict[name if name else wrapped.__name__] = DecoratedCommand(wrapped)
-    return wrapper
+    return wrapper(wrapped)
