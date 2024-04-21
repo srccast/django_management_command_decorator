@@ -14,3 +14,6 @@ class mgmt_command(BaseCommand):  # noqa: N801
 
     def handle(self, *args, **options):
         return self()
+
+    def rpartition(self, *args, **kwargs):
+        return [self.wrapped.__module__.rpartition(".")[0]]
