@@ -1,3 +1,4 @@
+django
 wrapt
 pytest
 pytest-django
