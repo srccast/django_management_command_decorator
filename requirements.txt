@@ -2,3 +2,4 @@ django
 wrapt
 pytest
 pytest-django
+bump-my-version
