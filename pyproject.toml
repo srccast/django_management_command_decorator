@@ -16,6 +16,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "Django",
+    "wrapt"
+]
 
 [project.urls]
 Homepage = "https://github.com/srccast/django_management_command_decorator"
