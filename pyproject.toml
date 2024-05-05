@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "django_management_command_decorator"
 version = "0.0.1"
 authors = [
-  { name="Fabian Lange", email="fabian.lange@srccast.de" },
+    { name = "Fabian Lange", email = "fabian.lange@srccast.de" },
 ]
 description = "The django management decorator package"
 readme = "README.md"
@@ -24,6 +24,22 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/srccast/django_management_command_decorator"
 Issues = "https://github.com/srccast/django_management_command_decorator/issues"
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "management_command_decorator/",
+]
+exclude = [
+    "management_command_decorator/admin.py",
+    "management_command_decorator/views.py",
+    "management_command_decorator/models.py",
+    "management_command_decorator/tests.py",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "management_command_decorator/",
+]
 
 # ==== pytest ====
 [tool.pytest.ini_options]
@@ -68,70 +84,70 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = [
-  "F",
-  "E",
-  "W",
-  "C90",
-#  "I",
-  "N",
-  "UP",
-  "YTT",
-  # "ANN", # flake8-annotations: we should support this in the future but 100+ errors atm
-  "ASYNC",
-  "S",
-  "BLE",
-  "FBT",
-  "B",
-  "A",
-  "COM",
-  "C4",
-  "DTZ",
-  "T10",
-  "DJ",
-  "EM",
-  "EXE",
-  "FA",
-  'ISC',
-  "ICN",
-  "G",
-  'INP',
-  'PIE',
-  "T20",
-  'PYI',
-  'PT',
-  "Q",
-  "RSE",
-  "RET",
-  "SLF",
-  "SLOT",
-  "SIM",
-  "TID",
-  "TCH",
-  "INT",
-  # "ARG", # Unused function argument
-  "PTH",
-  "ERA",
-  "PD",
-  "PGH",
-  "PL",
-  "TRY",
-  "FLY",
-  # "NPY",
-  # "AIR",
-  "PERF",
-  # "FURB",
-  # "LOG",
-  "RUF"
+    "F",
+    "E",
+    "W",
+    "C90",
+    #  "I",
+    "N",
+    "UP",
+    "YTT",
+    # "ANN", # flake8-annotations: we should support this in the future but 100+ errors atm
+    "ASYNC",
+    "S",
+    "BLE",
+    "FBT",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "T10",
+    "DJ",
+    "EM",
+    "EXE",
+    "FA",
+    'ISC',
+    "ICN",
+    "G",
+    'INP',
+    'PIE',
+    "T20",
+    'PYI',
+    'PT',
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    # "ARG", # Unused function argument
+    "PTH",
+    "ERA",
+    "PD",
+    "PGH",
+    "PL",
+    "TRY",
+    "FLY",
+    # "NPY",
+    # "AIR",
+    "PERF",
+    # "FURB",
+    # "LOG",
+    "RUF"
 ]
 ignore = [
-  "S101", # Use of assert detected https://docs.astral.sh/ruff/rules/assert/
-  "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
-  "SIM102", # sometimes it's better to nest
-  "G004",
-  "PTH123",
-  "S311",
-  "S105",
-  "PLR2004",
+    "S101", # Use of assert detected https://docs.astral.sh/ruff/rules/assert/
+    "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
+    "SIM102", # sometimes it's better to nest
+    "G004",
+    "PTH123",
+    "S311",
+    "S105",
+    "PLR2004",
 ]
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]

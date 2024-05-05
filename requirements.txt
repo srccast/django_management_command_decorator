@@ -3,3 +3,4 @@ wrapt
 pytest
 pytest-django
 bump-my-version
+hatchling

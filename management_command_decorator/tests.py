@@ -1,6 +1,6 @@
 from django.core.management import call_command
 
-from management_command_decorator import print_command, print_command_2
+from management_command_decorator.commands import print_command, print_command_2
 
 
 def test_call_command():
