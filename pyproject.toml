@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django_management_command_decorator"
-version = "0.0.1"
+version = "0.0.4"
 authors = [
     { name = "Fabian Lange", email = "fabian.lange@srccast.de" },
 ]
