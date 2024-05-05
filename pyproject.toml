@@ -175,7 +175,7 @@ include = '\.pyi?$'
 exclude = 'manage.py|migrations/*|asgi.py|wsgi.py|apps.py'
 
 [tool.bumpversion]
-current_version = "0.0.3"
+current_version = "0.0.4"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
