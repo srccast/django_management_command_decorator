@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django_management_command_decorator"
-version = "0.0.4"
+version = "0.0.5"
 authors = [
     { name = "Fabian Lange", email = "fabian.lange@srccast.de" },
 ]
@@ -175,7 +175,7 @@ include = '\.pyi?$'
 exclude = 'manage.py|migrations/*|asgi.py|wsgi.py|apps.py'
 
 [tool.bumpversion]
-current_version = "0.0.4"
+current_version = "0.0.5"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
