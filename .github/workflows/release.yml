@@ -16,8 +16,8 @@ jobs:
     - build
     runs-on: ubuntu-latest
     environment:
-      name: testpypi
-      url: https://test.pypi.org/project/django-management-command-decorator/
+      name: pypi
+      url: https://pypi.org/project/django-management-command-decorator/
     permissions:
       id-token: write
     steps:
@@ -28,8 +28,6 @@ jobs:
         path: dist/
     - name: Publish distribution
       uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        repository-url: https://test.pypi.org/legacy/
 
   github-release:
     name: Sign the Python distribution with Sigstore and upload them to GitHub Release
