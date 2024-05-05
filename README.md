@@ -1,6 +1,6 @@
 # Django management command decorator
 
-Small django app to quickly create management commands using a decorating, avoiding writing much boilerplate.
+`django_management_command_decorator`is a small Django app to quickly create management commands using a decorator.
 
 
 ## Installation
@@ -8,14 +8,16 @@ Small django app to quickly create management commands using a decorating, avoid
 * Install this package via pip `pip install django_management_command_decorator`
 * Add `management_command_decorator` to your `INSTALLED_APPS` settings
 * Create a `commands.py` in your app folder
-* Add the `django_management_command` decorator to any function in the `commands.py`
+* Add the `django_management_command` decorator to any function you wish to expose as a mangement command in `commands.py`
 
 
 ## Usage
 
-Create a `commands.py` in your app, and add the following code:
+Create a `commands.py` in your app folder, and add the following code:
 
 ```python
+from management_command_decorator.decorator import django_management_command
+
 @django_management_command
 def print_command():
     print("Hello World!")
@@ -32,9 +34,11 @@ Hello World!
 Function args will be added like management command parameters:
 
 ```python
+from management_command_decorator.decorator import django_management_command
+
 @django_management_command
 def greet(name):
-    print(f"Hello {name}!")  # noqa: T201
+    print(f"Hello {name}!")
 ```
 
 ```shell
